@@ -69,34 +69,6 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     backgroundColor: '#006622',
 
-  },
-  seccio2: {
-    flex: 1,
-    borderColor: 'transparent',
-    borderWidth: 3,
-    fontSize: 12,
-    fontWeight: '600',
-  },
-  seccio3: {
-    borderColor: 'transparent',
-    backgroundColor: '#009933',
-    color: 'white',
-    borderWidth: 5,
-    fontSize: 20,
-    textAlign: 'center'
-  },
-  seccio4: {
-    borderColor: 'transparent',
-    backgroundColor: '#009933',
-    color: 'white',
-    borderWidth: 5,
-    fontSize: 20,
-    margin: 5,
-    textAlign: 'center',
-    justifyContent: 'flex-end'
-  },
-  fechaHora: {
-    marginTop: '30%'
   }
 });
 
