@@ -11,13 +11,10 @@ import { ImagenHeader } from '../Components/ImagenHeader';
 import { Input, Button } from 'react-native-elements';
 import {
     StyleSheet,
-    View,
-    Text,
-    StatusBar,
-    text
+    View
 } from 'react-native';
 
-class usuario extends Component {
+class App extends Component {
     render() {
         return (
             <View style={styles.fondo}>
@@ -70,4 +67,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default usuario;
+export default App;

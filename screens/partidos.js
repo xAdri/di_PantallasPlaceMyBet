@@ -28,7 +28,7 @@ const partido = (equipo1, equipo2, fecha, hora) => {
 }
 
 
-class partidos extends Component {
+class App extends Component {
   render() {
     return (
       <View style={styles.fondo}>
@@ -100,4 +100,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default partidos;
+export default App;
