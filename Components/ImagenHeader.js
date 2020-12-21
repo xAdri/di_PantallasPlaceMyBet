@@ -8,13 +8,9 @@
 
 import React, { Component } from 'react';
 import {
-    SafeAreaView,
     StyleSheet,
-    ScrollView,
     Image,
-    View,
-    Text,
-    StatusBar,
+    View
 } from 'react-native';
 
 export class ImagenHeader extends Component {

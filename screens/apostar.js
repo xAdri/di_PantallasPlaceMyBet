@@ -13,30 +13,9 @@ import {
     View,
     Text
 } from 'react-native';
-import {CheckBox} from 'react-native-elements';
-
-
-const partido = (equipo1, equipo2, fecha, hora) => {
-    return (
-        <View style={styles.seccion}>
-            <View>
-                <Text style={styles.seccio4}>{equipo1} VS {equipo2}</Text>
-                <Text style={styles.seccio4}>{fecha}</Text>
-                <Text style={styles.seccio4}>{hora}</Text>
-            </View>
-        </View>
-    )
-}
-
-/*
-<Text style={styles.equipos}>             15:00            </Text>
-                                    <Text style={styles.equipos}>       Cuota Under      </Text>
-                                    <Text style={styles.equipos}>            2,23€             </Text>
-                                    <Text style={styles.equipos}>           UNDER             </Text>
-                                    <Text style={styles.equipos}>             1.5                </Text>
-                                    <Text style={styles.equipos}>             2.5                </Text>
-                                    <Text style={styles.equipos}>             3.5                </Text>
-*/
+//import { RadioButton } from 'react-native-paper';
+import { BoolComponent } from '../Components/BoolComponent';
+import { Input, Button } from 'react-native-elements';
 
 class App extends Component {
     render() {
@@ -45,33 +24,35 @@ class App extends Component {
                 <ImagenHeader />
                 <View style={styles.apuesta}>
                     <View style={styles.seccion}>
-                        <View style={styles.seccio2}>
-                            <View>
-                                <Text style={styles.equipos}>Valencia VS Levante</Text>
-                                <View style={styles.containerLeft}>
-                                    <Text style={styles.equipos}>        12/10/2020         </Text>
-                                    <Text style={styles.equipos}>        Cuota Over          </Text>
-                                    <Text style={styles.equipos}>               1,49€             </Text>
-                                    <Text style={styles.equipos}>              OVER            </Text>
-                                    <Text style={styles.equipos}>                1.5              </Text>
-                                    <Text style={styles.equipos}>                2.5              </Text>
-                                    <Text style={styles.equipos}>                3.5              </Text>
-                                </View>
-                                <View style={styles.containerRight}>
-                                    <Text style={styles.equipos}>             15:00            </Text>
-                                    <Text style={styles.equipos}>       Cuota Under      </Text>
-                                    <Text style={styles.equipos}>            2,23€             </Text>
-                                    <Text style={styles.equipos}>           UNDER             </Text>
-                                    <Text style={styles.equipos}>             1.5                </Text>
-                                    <Text style={styles.equipos}>             2.5                </Text>
-                                    <Text style={styles.equipos}>             3.5                </Text>
-                                    
-                                </View>
-                            </View>
+                        <View>
+                            <Text style={styles.equipos}>Valencia VS Levante</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.equipos}>12/10/2020</Text>
+                            <Text style={styles.equipos}>13:00h</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.equipos}>Cuota Over</Text>
+                            <Text style={styles.equipos}>Cuota Under</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={[styles.equipos, styles.shadow]}>1,49€</Text>
+                            <Text style={[styles.equipos, styles.shadow]}>2,23€</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.equipos}>Over</Text>
+                            <Text style={styles.equipos}>Under</Text>
+                        </View>
+                        <BoolComponent />
+                        <View style={styles.botones}>
+                            <Button containerStyle={styles.boton}
+                                title="Realizar apuesta"
+                                buttonStyle={styles.estiloBoton}
+                            />
                         </View>
                     </View>
                 </View>
-            </View>
+            </View >
         );
     }
 }
@@ -83,13 +64,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#009933'
     },
-    titulo: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#009933',
-        borderWidth: 15,
-        borderColor: '#009933'
-    },
     apuesta: {
         flex: 6,
         flexDirection: 'column',
@@ -98,23 +72,7 @@ const styles = StyleSheet.create({
     },
     seccion: {
         flex: 1,
-        backgroundColor: '#006622',
-        flexDirection: "row"
-    },
-    seccio2: {
-        flex: 1,
-        borderColor: 'transparent',
-        borderWidth: 3,
-        fontSize: 12,
-        fontWeight: '600',
-    },
-    seccio3: {
-        borderColor: 'transparent',
-        backgroundColor: '#009933',
-        color: 'white',
-        borderWidth: 5,
-        fontSize: 20,
-        textAlign: 'center'
+        backgroundColor: '#006622'
     },
     equipos: {
         borderColor: 'transparent',
@@ -126,25 +84,36 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'flex-end'
     },
-    fechaHora: {
-        marginTop: '30%'
+    shadow: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+        elevation: 24,
     },
-    containerLeft: {
-        flex: 1,
+    row: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'flex-start',
-        alignSelf: 'center'
+        justifyContent: 'space-around'
     },
-    containerRight: {
+    botones: {
         flex: 1,
-        flexDirection: 'row-reverse',
-        flexWrap: 'wrap',
-        alignItems: 'flex-end'
+        justifyContent: 'flex-end',
+        padding: 10,
+        flexDirection: 'column'
     },
-    item: {
-        width: '50%' // is 50% of container width
+    boton: {
+        justifyContent: 'flex-end',
+        width: '95%',
+        alignSelf: 'center',
+        margin: 5
+    },
+    estiloBoton: {
+        backgroundColor: '#009933',
     }
+
 });
 
 export default App;

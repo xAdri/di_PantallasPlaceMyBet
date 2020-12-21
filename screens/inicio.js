@@ -16,7 +16,7 @@ import {
     Text
 } from 'react-native';
 
-class inicio extends Component {
+class App extends Component {
     render() {
         return (
             <View style={styles.fondo}>
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default inicio;
+export default App;
